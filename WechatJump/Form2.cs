@@ -356,6 +356,10 @@ namespace WechatJump
                     }
                     if (chess == new Point())
                     {
+                        Adb.ScreencapNow();
+                        pictureBox1.Image = Image.FromFile(@"E:\adb\1.png");
+                        button4.Text = "JUMP AUTO";
+                        timer1.Enabled = true;
                         MessageBox.Show("找不到棋子！初始化失败！");
                         bitmap.Dispose();
                         return;
@@ -407,6 +411,10 @@ namespace WechatJump
                     }
                     if (rectVertex == new Point())
                     {
+                        Adb.ScreencapNow();
+                        pictureBox1.Image = Image.FromFile(@"E:\adb\1.png");
+                        button4.Text = "JUMP AUTO";
+                        timer1.Enabled = true;
                         MessageBox.Show("未知的物体！初始化失败！");
                         bitmap.Dispose();
                         return;
@@ -467,6 +475,10 @@ namespace WechatJump
                 }
                 catch (Exception)
                 {
+                    Adb.ScreencapNow();
+                    pictureBox1.Image = Image.FromFile(@"E:\adb\1.png");
+                    button4.Text = "JUMP AUTO";
+                    timer1.Enabled = true;
                     MessageBox.Show("微调系数必须为数值！");
                     return;
                 }
@@ -478,6 +490,10 @@ namespace WechatJump
                 }
                 catch (Exception)
                 {
+                    Adb.ScreencapNow();
+                    pictureBox1.Image = Image.FromFile(@"E:\adb\1.png");
+                    button4.Text = "JUMP AUTO";
+                    timer1.Enabled = true;
                     MessageBox.Show("延迟时间必须为数值！");
                     return;
                 }

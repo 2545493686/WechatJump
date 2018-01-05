@@ -74,7 +74,7 @@ namespace WechatJump {
         }
         
         /// <summary>
-        ///   查找类似 WechatJump 1.0  2018  LanQ  2545493686@QQ.COM  抛砖引玉，仅供学习 的本地化字符串。
+        ///   查找类似 WechatJump 1.0  2018.1.5  LanQ  2545493686@QQ.COM  抛砖引玉，仅供学习 的本地化字符串。
         /// </summary>
         internal static string Version {
             get {
