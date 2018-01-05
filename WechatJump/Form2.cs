@@ -147,8 +147,10 @@ namespace WechatJump
                             MessageBox.Show("颜色容差只能为整数");
                             return;
                         }
+                        /*
                         if (bitmap.GetPixel(x, y) == Color.FromArgb(255, 238, 97))
                         {
+                            
                             //MessageBox.Show("黄色！手动一波！");
                             rectVertex.X = x;
                             rectVertex.Y = y;
@@ -156,7 +158,8 @@ namespace WechatJump
                             rectEnd.Y = rectVertex.Y + 75;
                             break;
                         }
-                        else if ((x < chess.X - 75 || x > chess.X + 75) && isColorAbout)
+                        */
+                        if ((x < chess.X - 75 || x > chess.X + 75) && isColorAbout)
                         {
                             rectVertex.X = x;
                             rectVertex.Y = y;
@@ -266,9 +269,18 @@ namespace WechatJump
         /// <returns></returns>
         bool ColorAbout(Color color0, Color color1)
         {//70000
+         //Console.WriteLine("color "+ (color0.ToArgb() - color1.ToArgb()));
+         
             int i = new int();
             i = Convert.ToInt32(textBox4.Text);
-            return !(color0.ToArgb() - color1.ToArgb() > i || color0.ToArgb() - color1.ToArgb() < -i);
+            //return !(color0.ToArgb() - color1.ToArgb() > i || color0.ToArgb() - color1.ToArgb() < -i);
+            
+            int r = Math.Max(color0.R,color1.R)- Math.Min(color0.R, color1.R);
+            int g = Math.Max(color0.G, color1.G) - Math.Min(color0.G, color1.G);
+            int b = Math.Max(color0.B, color1.B) - Math.Min(color0.B, color1.B);
+            return !((Math.Max(Math.Max(r,g),b) + Math.Min(Math.Min(r, g), b)) > i);
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -387,6 +399,7 @@ namespace WechatJump
                                 MessageBox.Show("颜色容差只能为整数");
                                 return;
                             }
+                            /*
                             if (bitmap.GetPixel(x, y) == Color.FromArgb(255, 238, 97))
                             {
                                 //MessageBox.Show("黄色！手动一波！");
@@ -397,7 +410,8 @@ namespace WechatJump
                                 rectEnd.Y = rectVertex.Y + 75;
                                 break;
                             }
-                            else if ((x < chess.X - 75 || x > chess.X + 75) && isColorAbout)
+                            else */
+                            if ((x < chess.X - 75 || x > chess.X + 75) && isColorAbout)
                             {
                                 rectVertex.X = x;
                                 rectVertex.Y = y;
